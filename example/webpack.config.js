@@ -1,6 +1,5 @@
 const path = require('path')
 const OpenBrowserPlugin = require('open-browser-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const HOST = "http://localhost"
@@ -44,7 +43,7 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: "images/[name][hash:8].[ext]"          //遇到图片  生成一个images文件夹  名字.后缀的图片
+                        name: "images/[name].[ext]"          //遇到图片  生成一个images文件夹  名字.后缀的图片
                     }
                 }]
             },
@@ -54,7 +53,7 @@ module.exports = {
                     {
                         loader: "file-loader",
                         options: {
-                            name: "fonts/[name][hash:8].[ext]",
+                            name: "fonts/[name].[ext]",
                         },
                     },
                 ],
@@ -77,7 +76,7 @@ module.exports = {
         compress: false,
         inline: true,
         port: PORT,
-        publicPath: "/dist/",
+        publicPath: "/dist",
         historyApiFallback: true,
         stats: {
             color: true,
@@ -88,10 +87,6 @@ module.exports = {
         }
     },
     plugins: [
-        new CopyWebpackPlugin([{
-            from: path.join(__dirname, "../example/cover.jpg"),
-            to: path.join(__dirname, "../example/dist/cover.jpg")
-        }]),
         new HtmlWebpackPlugin({
             template: './example/index.html',
             title: 'react-3d-gallery example'

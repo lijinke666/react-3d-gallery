@@ -13,19 +13,19 @@ export default class Gallery3d extends PureComponent {
         speed: 300,
         autoPlay: true,
         arrow: true,
-        backfaceVisibility:true,
+        backfaceVisibility: true,
         autoPlaySpeed: 4000
     }
     static propTypes = {
-        width:PropTypes.number.isRequired,
-        height:PropTypes.number.isRequired,
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired,
         categories: PropTypes.array.isRequired,
-        space:PropTypes.number,
+        space: PropTypes.number,
         autoPlay: PropTypes.bool,
         autoPlaySpeed: PropTypes.number,
-        speed:PropTypes.number,
-        arrow:PropTypes.bool,
-        backfaceVisibility:PropTypes.bool,
+        speed: PropTypes.number,
+        arrow: PropTypes.bool,
+        backfaceVisibility: PropTypes.bool,
     }
     constructor(props) {
         super(props)
@@ -94,37 +94,35 @@ export default class Gallery3d extends PureComponent {
             <div
                 key="rotateBox"
                 className={classNames("rotate-box", className)}
-                style={{ width, height,...style }}
+                style={{ width, height, ...style }}
                 {...attr}
             >
                 <ul className="category"
-                    style={{...styles,width,height}}
+                    style={{ ...styles, width, height }}
                 >
                     {
                         categories.map((item, i) => {
 
-                            const { cover, mask } = item
+                            const { cover, mask,href } = item
                             const styles = {
                                 width,
                                 height,
-                                "backfaceVisibility":"",
+                                "backfaceVisibility": "",
                                 "WebkitBackfaceVisibility": backfaceVisibility ? "visible" : "hidden",
-                                "WebkitBackfaceVisibility":backfaceVisibility ? "visible" : "hidden",
-                                "WebkitTransform": `rotateY(${360 / categoriesLength * i}deg) translateZ(${r}px)`,
-                                "Transform": `rotateY(${360 / categoriesLength * i}deg) translateZ(${r}px)`,
+                                "WebkitBackfaceVisibility": backfaceVisibility ? "visible" : "hidden",
+                                "WebkitTransform": `rotateY(${360 / categoriesLength * i}deg) translate3d(0,0,${r}px)`,
+                                "Transform": `rotateY(${360 / categoriesLength * i}deg) translate3d(0,0,${r}px)`,
                                 "background": `url(${cover}) no-repeat`
                             }
                             return (
                                 <li
                                     className="item"
-                                    data-id={i}
                                     alt="category"
                                     key={`category${i}`}
                                     style={styles}
                                 >
-                                    {
-                                        mask ? mask : undefined
-                                    }
+                                    {mask ? mask : undefined}
+                                    <a href={href} className='category-link'></a>
                                 </li>
                             )
                         })

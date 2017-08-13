@@ -20,7 +20,13 @@
             background-repeat: no-repeat;
             background-size:cover;
             border:1px solid #dcdcdc;
+            box-shadow: 0 0 10px #dcdcdc;
             overflow: hidden;
+            .category-link{
+                width: 100%;
+                position: absolute;
+                height: 100%;
+            }
             &:hover{
                 .photo-cover{
                     bottom:0;
@@ -35,6 +41,7 @@
                 bottom:-100%;
                 color:#fff;
                 text-align: center;
+
                 transition: bottom .25s cubic-bezier(0.165, 0.84, 0.44, 1);
                 .cover-title{
                     margin-bottom: 0;

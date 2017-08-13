@@ -1,4 +1,4 @@
-# Rc-button
+# react-3d-gallery
 ### a example
 
 ```
