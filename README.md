@@ -3,7 +3,9 @@ a react 3d gallery component
 
 
 ## Installation
-`npm install react-3d-gallery --save`
+```
+npm install react-3d-gallery --save
+```
 
 ## Example
 ```
