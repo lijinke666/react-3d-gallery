@@ -5,6 +5,14 @@ a react 3d gallery component
 ## Installation
 `npm install react-3d-gallery --save`
 
+## Example
+```
+git clone https://github.com/lijinke666/react-3d-gallery.git
+```
+```
+npm run demo
+```
+
 ```javascript
 import React from "react"
 import ReactDOM from "react-dom"
