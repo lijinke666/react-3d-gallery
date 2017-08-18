@@ -8,6 +8,7 @@ npm install react-3d-gallery --save
 ```
 
 ## Example
+### [Live Demo](https://lijinke666.github.io/react-3d-gallery/)
 ```
 git clone https://github.com/lijinke666/react-3d-gallery.git
 ```
